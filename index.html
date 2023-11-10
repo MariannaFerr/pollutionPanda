@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security with Stoffel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico?v=2"  />
+
+
+<body>
+
+    <nav>
+
+        <img src="images/logo2.png" alt="">
+        <a id="back-to-start">Back to start</a>
+        <a onclick="openModal('modal-1')">Credits</a>
+        <a href="https://github.com/omarkhan03/329_wireframe" target="_blank">Source code</a>
+
+    </nav>
+
+    <div id="modal-1" class="jw-modal">
+        <div class="jw-modal-body">
+            <h1>Credits</h1>
+            <br>
+            <p>
+                Artwork: 
+                <p><a href="https://mariannaferr.github.io/" target="_blank">Marianna Ferreira</a> </p> 
+            </p>
+            <br>
+            <p>
+                Code: 
+                    <p><a href="https://github.com/arian-sfri" target="_blank">Arian Safari</a></li>
+                    <p><a href="https://github.com/Artematix" target="_blank">Artemy Gavrilov</a></li>
+                    <p><a href="https://mariannaferr.github.io/" target="_blank">Marianna Ferreira</a> </p> 
+                    <p><a href="https://okhan.me" target="_blank">Omar Khan</a></li>
+                    <p><a href="https://github.com/omarmsragab" target="_blank">Omar Ragab</a></li>
+            </p>
+            <br>
+            <p>
+                Inspiration: 
+                    <!-- <p>
+                        <a href="https://www.youtube.com/watch?v=c36UNSoJenI" target="_blank">Stoffel the honey badger</a></li>
+            </p> -->
+            </p>
+            <br>
+            <iframe src="https://www.youtube.com/embed/c36UNSoJenI" frameborder="0"></iframe>
+            <br>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <p class="speech" id="speech">Hi! I'm Stoffel the red panda!</p>
+
+    <div id="stoffel">
+        <img class="pic" id="availability" src="images/availability.png" alt="">
+        <img class="pic" id="closed" src="images/closed.jpeg" alt="">
+        <img class="pic" id="confidentiality" src="images/confidentiality.jpeg" alt="">
+        <img class="pic" id="correct" src="images/correct.jpeg" alt="">
+        <img class="pic" id="open" src="images/open.jpeg" alt="">
+        <img class="pic" id="wrong" src="images/wrong.jpeg" alt="">
+        <img class="pic" id="yawn" src="images/yawn.jpeg" alt="">
+        <img class="pic" id="smile" src="images/smile.jpeg" alt="">
+        <img class="pic" id="sleep" src="images/sleep.jpeg" alt="">
+        <img class="pic" id="roll" src="images/roll.jpeg" alt="">
+        <img class="pic" id="peek" src="images/peek.jpeg" alt="">
+        <img class="pic" id="logo" src="images/logo.png" alt="">
+    </div>
+
+
+
+
+    <div class="links">
+
+        <div id="password">
+            <label for="fname">Password:</label>
+            <input type="text" id="input" name="fname">
+        </div>
+
+        <button id="no">No &#128526;</button> 
+        <button id="yes">Yes &#128532;</button> 
+
+        <button id="back">&lt;- Back</button> 
+        <button id="next">Next -></button> 
+
+        <div id="quiz" class="quiz-column">
+
+            <div id="quiz-row-1" class="quiz-row">
+                <button id="a1">a1</button> 
+                <button id="a2">a2</button> 
+            </div>
+
+            <div id="quiz-row-2" class="quiz-rw">
+                <button id="a3">a3</button> 
+                <button id="a4">a4</button> 
+            </div>
+    
+        </div>
+        <p class="speech" id="score"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
