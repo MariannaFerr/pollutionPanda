@@ -13,6 +13,8 @@ const smile = document.getElementById("smile");
 const sleep = document.getElementById("sleep");
 const wrong = document.getElementById("wrong");
 const yawn = document.getElementById("yawn");
+const intro1 = document.getElementById("intro1");
+const newSit = document.getElementById("newSit");
 
 
 const speech = document.getElementById("speech");
@@ -39,20 +41,20 @@ const sequence = [
         back: null
     },
     { // 1
-        speech: "Hi! I'm Stoffel the red panda!",
-        image: "images/roll.jpeg",
+        speech: "test test.",
+        image: "images/intro1.JPG", 
         next: 2,
         back: 0
     },
     { // 2
         speech: "I'm here to teach you about the security triad &#128522;",
-        image: "images/open.jpeg",
+        image: "images/newSit.JPG",
         next: 3,
         back: 1
     },
     { // 3
         speech: "Before we start, please enter your password below &#128516;",
-        image: "images/closed.jpeg",
+        image: "images/walk.JPG",
         next: 4,
         back: 2
     },
@@ -411,6 +413,7 @@ yes.addEventListener("click", () => {
 */
 function updateStoffel() {
 
+    intro1.style.display = "none";
     availability.style.display = "none";
     confidentiality.style.display = "none";
     closed1.style.display = "none";
@@ -425,6 +428,9 @@ function updateStoffel() {
     logo.style.display = "none";
 
     switch (sequence[index].image) {
+        case "images/intro1.JPG":
+            intro1.style.display = "";
+            break;
         case "images/availability.jpeg":
             availability.style.display = "";
             break;
