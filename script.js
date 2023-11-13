@@ -13,7 +13,10 @@ const smile = document.getElementById("smile");
 const sleep = document.getElementById("sleep");
 const wrong = document.getElementById("wrong");
 const yawn = document.getElementById("yawn");
-const intro1 = document.getElementById("intro1");
+const intro = document.getElementById("intro");
+const intro2 = document.getElementById("intro2");
+const intro3 = document.getElementById("intro3");
+
 const newSit = document.getElementById("newSit");
 
 
@@ -42,33 +45,33 @@ const sequence = [
     },
     { // 1
         speech: "test test.",
-        image: "images/intro1.JPG", 
+        image: "images/intro.jpg", 
         next: 2,
         back: 0
     },
     { // 2
-        speech: "I'm here to teach you about the security triad &#128522;",
-        image: "images/newSit.JPG",
+        speech: "please &#128522;",
+        image: "images/intro2.JPG",
         next: 3,
         back: 1
     },
     { // 3
-        speech: "Before we start, please enter your password below &#128516;",
-        image: "images/walk.JPG",
+        speech: "Before we start,  &#128516;",
+        image: "images/intro3.JPG",
         next: 4,
         back: 2
     },
     { // 4 asks for password
         speech: "Okay, one more question before we begin... was that your real password? &#129320;",
         image: "images/peek.jpeg",
-        next: null,
-        back: null,
+        next: 5,
+        back: 3,
     },
     { // 5
         speech: "Good! You passed the first lesson! Never share your password with anyone &#128521;",
         image: "images/correct.jpeg",
-        next: 7,
-        back: 3
+        next: 6,
+        back: 4
     },
     { // 6
         speech: "Shame on you, You failed the first lesson &#128561 Never share your password with anyone!",
@@ -412,8 +415,9 @@ yes.addEventListener("click", () => {
         - Omar  
 */
 function updateStoffel() {
-
-    intro1.style.display = "none";
+    intro.style.display = "none";
+    intro2.style.display = "none";
+    intro3.style.display = "none";
     availability.style.display = "none";
     confidentiality.style.display = "none";
     closed1.style.display = "none";
@@ -428,8 +432,14 @@ function updateStoffel() {
     logo.style.display = "none";
 
     switch (sequence[index].image) {
-        case "images/intro1.JPG":
-            intro1.style.display = "";
+        case "images/intro.jpg":
+            intro.style.display = "";
+            break;
+        case "images/intro2.JPG":
+            intro2.style.display = "";
+            break;
+        case "images/intro3.JPG":
+            intro3.style.display = "";
             break;
         case "images/availability.jpeg":
             availability.style.display = "";
@@ -499,14 +509,6 @@ function updateUI() {
         next.innerHTML = 'Click here to start!';
     } else if (index == sequence.length - 1) {
         next.style.display = 'none';
-    } else if (index == 3) {
-        pwd.style.display = '';
-    } else if (index == 4) {
-        back.style.display = 'none';
-        next.style.display = 'none';
-
-        no.style.display = '';
-        yes.style.display = '';
     } else if (index == 9) {
         activateQuiz(
             "Me and my boss",
