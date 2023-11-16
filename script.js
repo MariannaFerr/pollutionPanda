@@ -2,7 +2,7 @@ const back = document.getElementById("back");
 const next = document.getElementById("next");
 const backToStart = document.getElementById("back-to-start");
 
-const availability = document.getElementById("availability");
+const availabisility = document.getElementById("availability");
 const confidentiality = document.getElementById("confidentiality");
 const closed1 = document.getElementById("closed");
 const correct = document.getElementById("correct");
@@ -16,8 +16,12 @@ const yawn = document.getElementById("yawn");
 const intro = document.getElementById("intro");
 const intro2 = document.getElementById("intro2");
 const intro3 = document.getElementById("intro3");
-
+const bamboo = document.getElementById("bamboo");
 const newSit = document.getElementById("newSit");
+const walk = document.getElementById("walk");
+const sleepy = document.getElementById("sleepy");
+const climb = document.getElementById("climb");
+const sitSleep = document.getElementById("sitSleep");
 
 
 const speech = document.getElementById("speech");
@@ -44,169 +48,169 @@ const sequence = [
         back: null
     },
     { // 1
-        speech: "test test.",
+        speech: "92% of Asia and the Pacific's population are exposed to something that risks their health daily. But humans aren't the only ones who suffer from it.",
         image: "images/intro.jpg", 
         next: 2,
         back: 0
     },
     { // 2
-        speech: "please &#128522;",
+        speech: "Animals that once flourished in numbers are reaching endangerment status, and one of the contributors is greatly in our control:",
         image: "images/intro2.JPG",
         next: 3,
         back: 1
     },
     { // 3
-        speech: "Before we start,  &#128516;",
+        speech: "Air Pollution.",
         image: "images/intro3.JPG",
         next: 4,
         back: 2
     },
     { // 4 asks for password
-        speech: "Okay, one more question before we begin... was that your real password? &#129320;",
+        speech: "Okay, before we begin... Red pandas are most closely related to: ",
         image: "images/peek.jpeg",
-        next: 5,
-        back: 3,
+        correct: 5,
+        wrong: [6, 6, 6]
     },
     { // 5
-        speech: "Good! You passed the first lesson! Never share your password with anyone &#128521;",
+        speech: "Good! Did you know that skunks and weasels are also my distant relatives? &#128521;",
         image: "images/correct.jpeg",
-        next: 6,
+        next: 7,
         back: 4
     },
     { // 6
-        speech: "Shame on you, You failed the first lesson &#128561 Never share your password with anyone!",
+        speech: "That's what you'd think, but it's wrong! Red pandas are most closly related to raccoons! &#128561",
         image: "images/yawn.jpeg",
         next: 7,
-        back: 3
+        back: 4
     },
-    { // 7 introduces the triad
-        speech: "There are three main principles of security: confidentiality, integrity, and availability.",
-        image: "images/open.jpeg",
+    { // 7 intro
+        speech: "Numbers are dwindling, and sadly, the red panda species has been listed as Endangered on the IUCN Red List since 2008.",
+        image: "images/sleepy.JPG",
         next: 8,
-        back: 3
+        back: 4
     },
     { // 8 confidentiality
-        speech: "First off, we have confidentiality. This means that only authorized users should be able to access information &#128373;",
-        image: "images/confidentiality.jpeg",
+        speech: "Red pandas are mostly found in Eastern Himalayas region, in nearby mountainous regions like China, Nepal, and Butan. ⛰️",
+        image: "images/walk.JPG",
         next: 9,
         back: 7
     },
     { // 9
-        speech: "Pop quiz: Who should have access to your email password?",
-        image: "images/closed.jpeg",
+        speech: "Pop quiz: What is the top contributor to the Red Panda's endangerment status?",
+        image: "images/newSit.JPG",
         correct: 11,
         wrong: 10
     },
     { // 10
-        speech: "Wrong! Only you should have access to your email password!",
+        speech: "Not quite... Though that is somewhat a factor, it's not the top contributor to the Red Panda's endangerment status &#128533;",
         image: "images/wrong.jpeg",
         next: 12,
         back: 9
     },
     { // 11
-        speech: "Correct! Only you should have access to your email password!",
+        speech: "Correct! Aside from habitat loss and poaching, climate change is one of the top 3 biggest contributors to the Red Panda’s endangerment status",
         image: "images/correct.jpeg",
         next: 12,
         back: 9
     },
     { // 12
-        speech: "Confidentiality is important because it prevents unauthorized users from accessing sensitive information &#128683; &#128520;",
-        image: "images/confidentiality.jpeg",
+        speech: "Red pandas require a narrow and specific temperature range which, in recent years, has been affected by climate change. &#128167; &#128167; &#128167;",
+        image: "images/smile.jpeg",
         next: 13,
         back: 9
     },
     { // 13
-        speech: "Which of the following best describes the relationship between confidentiality and privacy? &#129300",
-        image: "images/closed.jpeg",
+        speech: "What is the optimal tempurature for red pandas? &#129300",
+        image: "images/roll.jpeg",
         correct: 15,
-        wrong: [14, 17, 18]
+        wrong: [14, 14, 14]
     },
     { // 14
-        speech: "Wrong! Confidentiality is concerned with protecting sensitive information from unauthorized access or disclosure, while privacy is a broader concept that refers to an individual's right to control their personal information and how it is used &#128577;",
+        speech: "Wrong! That's too hot! Red pandas prefer cooler tempuratures... &#128544",
         image: "images/wrong.jpeg",
         next: 16,
         back: 13
     },
     { // 15
-        speech: "Correct! Confidentiality is concerned with protecting sensitive information from unauthorized access or disclosure, while privacy is a broader concept that refers to an individual's right to control their personal information and how it is used &#128175",
+        speech: "Correct! This is a somewhat low temperature, so how do red pandas survive? &#128533;",
         image: "images/correct.jpeg",
         next: 16,
         back: 13
     },
     { // 16
-        speech: "Confidentiality is a key aspect of privacy, but privacy also encompasses other elements such as data ownership, data accuracy, and data usage. Therefore, confidentiality can be seen as a subset of privacy.",
-        image: "images/smile.jpeg",
-        next: 19,
+        speech: "Red pandas participate in something known as 'vertical migration'.",
+        image: "images/climb.JPG",
+        next: 17,
         back: 13
     },
     { // 17
-        speech: "Wrong! Confidentiality and privacy are absolutely related! &#128544",
-        image: "images/wrong.jpeg",
-        next: 16,
-        back: 13
+        speech: "They migrate to higher elevations in the summer, and lower elevations in the winter to maintain their optimal temperature range.",
+        image: "images/walk.jpeg",
+        next: 18,
+        back: 16
     },
     { // 18
-        speech: "Wrong! Although confidentiality and privacy are related, they are not the same &#128533",
-        image: "images/wrong.jpeg",
-        next: 16,
+        speech: "Unfortunately, climate change in recent years is causing the temperature to rise, which is disrupting the red pandas' migration patterns.",
+        image: "images/yawn.jpeg",
+        next: 19,
         back: 13
     },
     { // 19
-        speech: "Great! Now let's move on to integrity, integrity is the principle that data should neither be tampered with nor accidentally corrupted &#128737;",
-        image: "images/sleep.jpeg",
+        speech: "As Eastern Asia heats up due to air pollution, they are forced to move to higher elevations more frequently, isolating their population from one another and making it harder for them to reproduce.",
+        image: "images/climb.JPG",
         next: 20,
         back: 16
     },
     { // 20
-        speech: "Which of these would compromise a system's integrity?",
-        image: "images/open.jpeg",
+        speech: "Which of the following is the primary food source for red pandas?",
+        image: "images/sitSleep.JPG",
         correct: 22,
-        wrong: [21, 23, 24]
+        wrong: [21, 21, 21]
     },
     { // 21
-        speech: "Wrong! A user's password being leaked would compromise the system's confidentality, not its integrity! &#128565",
+        speech: "Almost! Although this is a food source for red pandas, it is not their primary food source. &#128533;",
         image: "images/wrong.jpeg",
-        next: 25,
+        next: 23,
         back: 20
     },
     { // 22
-        speech: "Correct! Corruption of files would compromise the system's integrity! &#129327; Files must always be protected from tampering and corruption!",
+        speech: "Correct! Bamboo shoots and leaves make up 95% of a red panda's diet! 🎋",
         image: "images/correct.jpeg",
-        next: 25,
+        next: 23,
         back: 20
     },
     { // 23
-        speech: "Wrong! Creating backups of sensitive files would actually IMPROVE a system's integrity! &#129300",
-        image: "images/wrong.jpeg",
-        next: 25,
+        speech: "Air pollution in Eastern Asia can also affect the quality of the weather, which will greatly impact the vegetation that grows there.",
+        image: "images/newSit.JPG",
+        next: 24,
         back: 20
     },
     { // 24
-        speech: "Wrong! Spilling water on your computer when you're logged into the system would not compromise the system's integrity, it wil only damage your own computer! &#129322",
-        image: "images/wrong.jpeg",
+        speech: "Bamboo, the red panda's primary food source, grows at lower elevations and is often harder for red pandas to access when they migrate upwards during warmer months. ",
+        image: "images/bamboo.JPG",
         next: 25,
-        back: 20
+        back: 23
     },
     { // 25
-        speech: "Integrity is important because it protects data from being modified or destroyed by unauthorized users.",
-        image: "images/open.jpeg",
+        speech: "A lack of bamboo in their diet can reduce their wter, protein, and fiber intake, which can lead to malnutrition and starvation. &#128577;",
+        image: "images/bamboo.JPG",
         next: 26,
-        back: 20
+        back: 24
     },
     { // 26
-        speech: "Which of these best describes the concept of integrity?",
-        image: "images/closed.jpeg",
+        speech: "Which of the following is another consequence from the weather caused by air pollution in a red panda's habitat?",
+        image: "images/sleepy.JPG",
         correct: 28,
         wrong: [27, 30, 31]
     },
     { // 27
-        speech: "Wrong! Ensuring that data is available to authorized users when they need it describes the concept of availability! &#128565",
+        speech: "Wrong! Red pandas will rarely experience a flood since they primarily reside in the mountains. &#128533",
         image: "images/wrong.jpeg",
         next: 32,
         back: 26
     },
     { // 28
-        speech: "Correct! Data integrity refers to the concept of maintaining the accuracy, completeness, and consistency of data over its entire lifecycle &#127919; <br/> <br/> In cybersecurity, data integrity is crucial to ensure that information has not been modified, deleted, or otherwise tampered with by unauthorized individuals or systems.",
+        speech: "Correct! Acid rain is a form of precipitation that is unusually acidic (low pH). This weather pattern becomes more common in areas of high air pollution. &#128167; &#128167; &#128167;",
         image: "images/correct.jpeg",
         next: 32,
         back: 26
@@ -218,55 +222,55 @@ const sequence = [
         back: 28
     },
     { // 30
-        speech: "Wrong! Ensuring that data is protected from unauthorized access and disclosure describes the concept of confidentiality! &#128565",
+        speech: " Wrong! This isn't the best answer... Humidity does increase temperature, but there is a more dangerous weather pattern that is caused by air pollution. &#128533",
         image: "images/wrong.jpeg",
         next: 32,
         back: 26
     },
     { // 31
-        speech: "Wrong! Although ensuring that data is stored in a secure and reliable manner might improve a system's integrity, it does not describe the concept of integrity! &#128517",
+        speech: "Wrong! Rock slides are not a common weather pattern in Eastern Asia. &#128533",
         image: "images/wrong.jpeg",
         next: 32,
         back: 26
     },
     { // 32
-        speech: "Perfect! Finally, we have availability, which is the principle that data should be accessible to authorized users when they need it &#128104;&#128273;&#128274;->&#128275;",
-        image: "images/availability.jpeg",
+        speech: "Perfect! Finally, How can we protect red pandas from the effects of air pollution?",
+        image: "images/newSit.JPG",
         next: 33,
         back: 26
     },
     { // 33
-        speech: "Pop quiz: Given the definition, which of these would BEST improve a system's availability?",
-        image: "images/closed.jpeg",
+        speech: "Pop quiz: What can we do?",
+        image: "images/sitSleep.JPG",
         correct: 35,
         wrong: [34, 36, 37]
     },
     { // 34
-        speech: "Wrong! A weak internet connection doesn't affect a system's availability, it just makes it less accessible for you! &#128577",
+        speech: "Wrong! This is completely impractical and not realistic.",
         image: "images/wrong.jpeg",
         next: 38,
         back: 33
     },
     { // 35
-        speech: "Correct! Having the option of accessing the system regardless of what device you're using is a great way of increasing a system's availability! &#128175",
+        speech: "Correct! Each and every one of us has the ability to reduce air pollution by the choices we make daily.  ",
         image: "images/correct.jpeg",
         next: 38,
         back: 33
     },
     { // 36
-        speech: "Wrong! Why did you even pick this!? &#129324; This is the worst option! &#128557 It completely destroys the system's availability. &#128128;&#128128;&#128128",
+        speech: "Wrong! There's always something we can do! &#128548",
         image: "images/wrong.jpeg",
         next: 38,
         back: 33
     },
     { // 37
-        speech: "Sort of? Although having the option to view a website in multiple languages improves its availability, there is a better option! &#128533",
+        speech: "Wrong! Not going to the zoo won't help red pandas! Some experts even colclude that zoos help keep the dwindling population of red pandas stable. &#128548",
         image: "images/wrong.jpeg",
         next: 38,
         back: 33
     },
     { // 38
-        speech: "Availability is important because it makes a system more reliable because users will have the safety of knowing the system will always be there.",
+        speech: "do a grtaphic here",
         image: "images/availability.jpeg",
         next: 39,
         back: 33
@@ -415,10 +419,15 @@ yes.addEventListener("click", () => {
         - Omar  
 */
 function updateStoffel() {
+    sitSleep.style.display = "none";
+    climb.style.display = "none";
+    sleepy.style.display = "none";
+    walk.style.display = "none";
+    bamboo.style.display = "none";
+    newSit.style.display = "none";
     intro.style.display = "none";
     intro2.style.display = "none";
     intro3.style.display = "none";
-    availability.style.display = "none";
     confidentiality.style.display = "none";
     closed1.style.display = "none";
     correct.style.display = "none";
@@ -441,12 +450,24 @@ function updateStoffel() {
         case "images/intro3.JPG":
             intro3.style.display = "";
             break;
-        case "images/availability.jpeg":
-            availability.style.display = "";
+        case "images/sitSleep.JPG":
+            sitSleep.style.display = "";
             break;
-        case "images/confidentiality.jpeg":
-            confidentiality.style.display = "";
+        case "images/climb.JPG":
+            climb.style.display = "";
+            break;
+        case "images/newSit.JPG":
+            newSit.style.display = "";
+            break;
+        case "images/bamboo.JPG":
+            bamboo.style.display = "";
+            break;
+        case "images/walk.JPG":
+            walk.style.display = "";
             break; 
+        case "images/sleepy.JPG":
+            sleepy.style.display = "";
+            break;
         case "images/correct.jpeg":
 
             if (!answered.has(index)) {     // Increments score when correct stoffel is shown
@@ -509,40 +530,47 @@ function updateUI() {
         next.innerHTML = 'Click here to start!';
     } else if (index == sequence.length - 1) {
         next.style.display = 'none';
+    } else if (index == 4) {
+        activateQuiz(
+            "Pandas",
+            "Raccoons", 
+            "Bears",
+            "Foxes"
+        )
     } else if (index == 9) {
         activateQuiz(
-            "Me and my boss",
-            "Only me! &#128274;", 
-            "Anyone who asks &#128275;",
-            "Only you, Stoffel <br/> the red panda!"
+            "Being Clumsy",
+            "Climate Change", 
+            "They Sleep All Day",
+            "Human Interference"
         )
     } else if (index == 13) {
         activateQuiz(
-            "Privacy is a subset of confidentiality",
-            "Confidentiality is a subset of privacy",
-            "Confidentiality and privacy are completely unrelated",
-            "Confidentiality and privacy are the same"
+            "30-34 degrees Celsius",
+            "17-25 degrees Celsius",
+            "34-40 degrees Celsius",
+            "27-31 degrees Celsius"
         )
     } else if (index == 20) {
         activateQuiz(
-            "A casual user's system is leaked",
-            "Malware that corrupts the files in the system &#x1f9a0;",
-            "Creating backups of sensitive files &#128193;",
-            "Spilling water on your computer while you're logged in to the system &#128167; &#128187;"
+            "Berries",
+            "Bamboo",
+            "Insects and Grubs",
+            "Roots"
         )
     } else if (index == 26) {
         activateQuiz(
-            "Ensuring that data is available to authorized users when they need it",
-            "Ensuring that data is accurate and has not been tampered with &#127919;",
-            "Ensuring that data is protected from unauthorized access and disclosure &#128274;",
-            "Ensuring that data is stored in a secure and reliable manner &#128272;"
+            "Floods",
+            "Acid Rain",
+            "Humidity",
+            "Rock Slides"
         )
     } else if (index == 33) {
         activateQuiz(
-            "A weak internet connection &#128246;",
-            "Allowing access to the system from both mobile phones and computers &#128241; &#128187;",
-            "Creating ransomware for the system &#x1f9a0;",
-            "Having the option of viewing the website in multiple languages &#127758;"
+            "Start petitions to ban air pollution. ",
+            "Raise awareness and reduce your own carbon footprint. ",
+            "There's nothing we can do. &#128577; ",
+            "Stop going to the zoo. "
         )
     } else if (index == 39) {
         activateQuiz(
