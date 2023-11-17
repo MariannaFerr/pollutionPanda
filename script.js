@@ -22,6 +22,10 @@ const walk = document.getElementById("walk");
 const sleepy = document.getElementById("sleepy");
 const climb = document.getElementById("climb");
 const sitSleep = document.getElementById("sitSleep");
+const data = document.getElementById("data");
+const stats1 = document.getElementById("stats1");
+const stats2 = document.getElementById("stats2");
+const map = document.getElementById("map");
 
 
 const speech = document.getElementById("speech");
@@ -54,7 +58,7 @@ const sequence = [
         back: 0
     },
     { // 2
-        speech: "Animals that once flourished in numbers are reaching endangerment status, and one of the contributors is greatly in our control:",
+        speech: "Animals that once flourished in numbers are reaching endangerment status, and one of the contributors is within in our control:",
         image: "images/intro2.JPG",
         next: 3,
         back: 1
@@ -79,7 +83,7 @@ const sequence = [
     },
     { // 6
         speech: "That's what you'd think, but it's wrong! Red pandas are most closly related to raccoons! &#128561",
-        image: "images/yawn.jpeg",
+        image: "images/wrong.jpeg",
         next: 7,
         back: 4
     },
@@ -90,13 +94,13 @@ const sequence = [
         back: 4
     },
     { // 8 confidentiality
-        speech: "Red pandas are mostly found in Eastern Himalayas region, in nearby mountainous regions like China, Nepal, and Butan. ⛰️",
+        speech: "As a result, red pandas are mostly found in very low numbers. They inhabit the Eastern Himalayas region, in nearby mountainous regions like China, Nepal, and Butan. ⛰️",
         image: "images/walk.JPG",
         next: 9,
         back: 7
     },
     { // 9
-        speech: "Pop quiz: What is the top contributor to the Red Panda's endangerment status?",
+        speech: "What is the top contributor to the Red Panda's endangerment status?",
         image: "images/newSit.JPG",
         correct: 11,
         wrong: 10
@@ -108,13 +112,13 @@ const sequence = [
         back: 9
     },
     { // 11
-        speech: "Correct! Aside from habitat loss and poaching, climate change is one of the top 3 biggest contributors to the Red Panda’s endangerment status",
+        speech: "Correct! Aside from habitat loss and poaching, climate change is one of the top 3 biggest contributors to the Red Panda’s endangerment status.",
         image: "images/correct.jpeg",
         next: 12,
         back: 9
     },
     { // 12
-        speech: "Red pandas require a narrow and specific temperature range which, in recent years, has been affected by climate change. &#128167; &#128167; &#128167;",
+        speech: "Red pandas require a narrow and specific temperature range which, in recent years, has been affected by climate change.",
         image: "images/smile.jpeg",
         next: 13,
         back: 9
@@ -153,13 +157,13 @@ const sequence = [
         speech: "Unfortunately, climate change in recent years is causing the temperature to rise, which is disrupting the red pandas' migration patterns.",
         image: "images/yawn.jpeg",
         next: 19,
-        back: 13
+        back: 17
     },
     { // 19
         speech: "As Eastern Asia heats up due to air pollution, they are forced to move to higher elevations more frequently, isolating their population from one another and making it harder for them to reproduce.",
         image: "images/climb.JPG",
         next: 20,
-        back: 16
+        back: 18
     },
     { // 20
         speech: "Which of the following is the primary food source for red pandas?",
@@ -181,7 +185,7 @@ const sequence = [
     },
     { // 23
         speech: "Air pollution in Eastern Asia can also affect the quality of the weather, which will greatly impact the vegetation that grows there.",
-        image: "images/newSit.JPG",
+        image: "images/roll.jpeg",
         next: 24,
         back: 20
     },
@@ -192,7 +196,7 @@ const sequence = [
         back: 23
     },
     { // 25
-        speech: "A lack of bamboo in their diet can reduce their wter, protein, and fiber intake, which can lead to malnutrition and starvation. &#128577;",
+        speech: "A lack of bamboo in their diet can reduce their water, protein, and fiber intake, which can lead to malnutrition and starvation. &#128577;",
         image: "images/bamboo.JPG",
         next: 26,
         back: 24
@@ -210,21 +214,21 @@ const sequence = [
         back: 26
     },
     { // 28
-        speech: "Correct! Acid rain is a form of precipitation that is unusually acidic (low pH). This weather pattern becomes more common in areas of high air pollution. &#128167; &#128167; &#128167;",
+        speech: "Correct! Acid rain is a form of precipitation that is unusually acidic (low pH). This weather pattern becomes more common in areas of high air pollution. ",
         image: "images/correct.jpeg",
-        next: 32,
+        next: 29,
         back: 26
     },
     { // 29
-        speech: "Ensuring data integrity involves using various techniques such as cryptographic hashing, digital signatures, access controls, and backups to detect and prevent unauthorized changes to data.",
-        image: "images/peek.jpeg",
+        speech: "As we've discussed, red pandas are mostly found in India and China.",
+        image: "images/data.png",
         next: 32,
         back: 28
     },
     { // 30
         speech: " Wrong! This isn't the best answer... Humidity does increase temperature, but there is a more dangerous weather pattern that is caused by air pollution. &#128533",
         image: "images/wrong.jpeg",
-        next: 32,
+        next: 29,
         back: 26
     },
     { // 31
@@ -234,14 +238,14 @@ const sequence = [
         back: 26
     },
     { // 32
-        speech: "Perfect! Finally, How can we protect red pandas from the effects of air pollution?",
-        image: "images/newSit.JPG",
+        speech: "Due to high levels of air pollution in these regions, they are more susceptible to acid rain. This places both people and animals at risk for this natural disaster.",
+        image: "images/data.png",
         next: 33,
-        back: 26
+        back: 29
     },
     { // 33
-        speech: "Pop quiz: What can we do?",
-        image: "images/sitSleep.JPG",
+        speech: "How can we protect red pandas, as well as other wildlife, from the consequences of air pollution?",
+        image: "images/newSit.JPG",
         correct: 35,
         wrong: [34, 36, 37]
     },
@@ -270,59 +274,65 @@ const sequence = [
         back: 33
     },
     { // 38
-        speech: "do a grtaphic here",
-        image: "images/availability.jpeg",
+        speech: "Take a look at the following data from 'IQAir World Quality Index 2020'. <br/> <br/> Some information has been hidden...",
+        image: "images/map.jpeg",
         next: 39,
         back: 33
     },
     { // 39
-        speech: "Which of the following is a common threat to a system's availability?",
-        image: "images/closed.jpeg",
+        speech: "Based on the data, What is average air polution in India?",
+        image: "images/stats1.png",
         correct: 41,
         wrong: [40, 43, 44]
     },
     { // 40
-        speech: "Wrong! Data breaches and theft of sensitive information are threats to a system's confidentiality! &#128548",
+        speech: "Wrong! That's way too high! &#128548  Hopefully we will never reach that point.",
         image: "images/wrong.jpeg",
         next: 45,
         back: 39
     },
     { // 41
-        speech: "Correct! DDoS attacks are a common threat to the availability of computer systems, websites, and networks. &#128584 <br/> <br/> In a DDoS attack, a large number of compromised systems, often called bots or zombies, flood a targeted system or network with a massive amount of traffic or requests, causing it to become overloaded and unavailable to legitimate users.",
+        speech: "That's right! It's 51.9 µg/m^3, which is well above the 'unhealthy' zone, which starts at 35.5 µg/m^3...",
         image: "images/correct.jpeg",
         next: 42,
         back: 39
     },
     { // 42
-        speech: "DDoS attacks can be launched using various techniques, such as amplification attacks, reflection attacks, and application-layer attacks, and they can be difficult to mitigate once they are underway.",
-        image: "images/open.jpeg",
+        speech: "As we can see, the air pollution in Eastern Asia is very high, and it's only getting worse. 😔",
+        image: "images/stats2.png",
         next: 45,
         back: 41
     },
     { // 43
-        speech: "Wrong! Malware and viruses infecting computer systems don't always affect a system's availability but may affect its integrity or even confidentiality! &#128565",
+        speech: "Wrong! It may suprise you, but the pollution levels are much higher than this. &#128577;",
         image: "images/wrong.jpeg",
         next: 45,
         back: 39
     },
     { // 44
-        speech: "Wrong! XSS attacks are usually used to steal sensitive information and compromise a system's confidentiality! &#128548",
+        speech: "Wrong! Although we wish this was true, the pollution levels are much higher than this. &#128577;",
         image: "images/wrong.jpeg",
         next: 45,
         back: 39
     },
     { // 45
-        speech: "Now that you know about the security triad, you can protect yourself from cyber attacks! &#128526 <br/> <br/> Feel free to take the quiz again to test your knowledge!",
+        speech: "This is a serious issue that needs to be addressed. With your help, we can make a difference and save the red pandas!",
         image: "images/yawn.jpeg",
-        next: null,
+        next: 46,
         back: 39,
+    },
+    { // 46
+        speech: "If you didn't know how air pollution affects red pandas before, then now you do! &#128526 <br/> <br/> Feel free to take the quiz again to see what you've learned!",
+        image: "images/intro3.JPG",
+        next: null,
+        back: 45,
     },
 ]
 
 const answered = new Set();
 let currentScore = 0;
 let index = 0;
-updateStoffel();
+updatePanda();
 updateUI();
 
 next.addEventListener("click", () => {
@@ -352,7 +362,7 @@ next.addEventListener("click", () => {
         console.log("Branching error. Index is null.")
     }
 
-    updateStoffel();
+    updatePanda();
     updateUI();
 });
 
@@ -392,25 +402,29 @@ back.addEventListener("click", () => {
         console.log("Branching error. Index is null.")
     }
 
-    updateStoffel();
+    updatePanda();
     updateUI();
 })
 
 backToStart.addEventListener("click", () => {
-    index = 0;
-    updateStoffel();
-    updateUI();
+    // index = 0;
+    // updatePanda();
+    // updateUI();
+    
+    // reset score by refreshing page
+    location.reload();
+    
 })
 
 no.addEventListener("click", () => {
     index = 5;
-    updateStoffel();
+    updatePanda();
     updateUI();
 })
 
 yes.addEventListener("click", () => {
     index = 6;
-    updateStoffel();
+    updatePanda();
     updateUI();
 })
 
@@ -418,7 +432,11 @@ yes.addEventListener("click", () => {
     This function has been updated to reduce lag
         - Omar  
 */
-function updateStoffel() {
+function updatePanda() {
+    map.style.display = "none";
+    stats1.style.display = "none";
+    stats2.style.display = "none";
+    data.style.display = "none";
     sitSleep.style.display = "none";
     climb.style.display = "none";
     sleepy.style.display = "none";
@@ -443,12 +461,37 @@ function updateStoffel() {
     switch (sequence[index].image) {
         case "images/intro.jpg":
             intro.style.display = "";
+            intro.style.width = "500px"; 
+            intro.style.height = "600px"; 
             break;
         case "images/intro2.JPG":
             intro2.style.display = "";
+            intro2.style.width = "500px"; 
+            intro2.style.height = "600px"; 
             break;
         case "images/intro3.JPG":
             intro3.style.display = "";
+            intro3.style.width = "500px"; 
+            intro3.style.height = "600px"; 
+            break;
+        case "images/map.jpeg":
+            map.style.display = "";
+            break;
+        case "images/stats1.png":
+            stats1.style.display = "";
+            stats1.style.width = "650px"; 
+            stats1.style.height = "800px"; 
+            break;
+        case "images/stats2.png":
+            stats2.style.display = "";
+            stats2.style.width = "650px"; 
+            stats2.style.height = "800px"; 
+            break;
+        case "images/data.png":
+            data.style.display = "";
+            data.style.width = "800px"; 
+            data.style.height = "600px";
+
             break;
         case "images/sitSleep.JPG":
             sitSleep.style.display = "";
@@ -461,23 +504,31 @@ function updateStoffel() {
             break;
         case "images/bamboo.JPG":
             bamboo.style.display = "";
+            bamboo.style.width = "400px"; 
+            bamboo.style.height = "500px"; 
             break;
         case "images/walk.JPG":
             walk.style.display = "";
+            walk.style.width = "430px";
+            walk.style.height = "490px"; 
             break; 
         case "images/sleepy.JPG":
             sleepy.style.display = "";
             break;
         case "images/correct.jpeg":
 
-            if (!answered.has(index)) {     // Increments score when correct stoffel is shown
-                currentScore++;             // So long as it hasnt been shown before
+            if (!answered.has(index)) {     // Increments score when 'correct' panda is shown
+                currentScore++;             // So long as it hasn't been shown before
                 answered.add(index);
             }
             correct.style.display = "";
+            correct.style.width = "450px";
+            correct.style.height = "470px"; 
             break;
         case "images/wrong.jpeg":            
             wrong.style.display = "";
+            wrong.style.width = "400px";
+            wrong.style.height = "490px"; 
             break;
         case "images/smile.jpeg":
             smile.style.display = "";
@@ -502,6 +553,8 @@ function updateStoffel() {
             break;
         case "images/logo.png":
             logo.style.display = "";
+            logo.style.width = "600px"; 
+            logo.style.height = "500px"; 
             break;
         default:
             console.log("error")
@@ -574,10 +627,10 @@ function updateUI() {
         )
     } else if (index == 39) {
         activateQuiz(
-            "Data breaches and theft of sensitive information &#9888;",
-            "Distributed denial-of-service (DDoS) attacks &#9940;",
-            "Malware and viruses infecting computer systems &#x1f9a0;",
-            "Cross-site scripting (XSS) attacks &#128137;"
+            "55.5 µg/m^3",
+            "51.9 µg/m^3",
+            "37.2 µg/m^3",
+            "18.3 µg/m^3"
         )
     }
 }
@@ -629,7 +682,7 @@ a1.addEventListener("click", () => {
         index = sequence[index].wrong[0]
     }
 
-    updateStoffel();
+    updatePanda();
     updateUI();
 })
 
@@ -637,7 +690,7 @@ a2.addEventListener("click", () => {
 
     index = sequence[index].correct
 
-    updateStoffel();
+    updatePanda();
     updateUI();
 })
 
@@ -649,7 +702,7 @@ a3.addEventListener("click", () => {
         index = sequence[index].wrong[1]
     }
 
-    updateStoffel();
+    updatePanda();
     updateUI();
 })
 
@@ -660,7 +713,7 @@ a4.addEventListener("click", () => {
         index = sequence[index].wrong[2]
     }
 
-    updateStoffel();
+    updatePanda();
     updateUI();
 })
 
