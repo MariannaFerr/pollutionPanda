@@ -106,7 +106,7 @@ const sequence = [
         wrong: 10
     },
     { // 10
-        speech: "Not quite... Though that is somewhat a factor, it's not the top contributor to the Red Panda's endangerment status &#128533;",
+        speech: "Not quite... Though that is somewhat a factor, it's not the top contributor to the Red Panda's endangerment status. &#128533;",
         image: "images/wrong.jpeg",
         next: 12,
         back: 9
@@ -154,7 +154,7 @@ const sequence = [
         back: 16
     },
     { // 18
-        speech: "Unfortunately, climate change in recent years is causing the temperature to rise, which is disrupting the red pandas' migration patterns.",
+        speech: "Unfortunately, the increase in air pollution over the last few decades has been causing the temperature to rise, which is disrupting the red pandas' migration patterns.",
         image: "images/yawn.jpeg",
         next: 19,
         back: 17
@@ -286,7 +286,7 @@ const sequence = [
         wrong: [40, 43, 44]
     },
     { // 40
-        speech: "Wrong! That's way too high! &#128548  Hopefully we will never reach that point.",
+        speech: "Wrong! That's way too high! &#128548  Hopefully India will never reach that point.",
         image: "images/wrong.jpeg",
         next: 45,
         back: 39
@@ -322,7 +322,7 @@ const sequence = [
         back: 39,
     },
     { // 46
-        speech: "If you didn't know how air pollution affects red pandas before, then now you do! &#128526 <br/> <br/> Feel free to take the quiz again to see what you've learned!",
+        speech: "If you didn't know how air pollution affects red pandas and other wildlife before, then now you do! &#128526 <br/> <br/> Feel free to take the quiz again to see what you've learned!",
         image: "images/intro3.JPG",
         next: null,
         back: 45,
