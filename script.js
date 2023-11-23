@@ -94,25 +94,25 @@ const sequence = [
         back: 4
     },
     { // 8 confidentiality
-        speech: "As a result, red pandas are mostly found in very low numbers. They inhabit the Eastern Himalayas region, in nearby mountainous regions like China, Nepal, and Butan. ⛰️",
+        speech: "As a result, red pandas are mostly found in very low numbers. They inhabit the Eastern Himalayas region, in nearby mountainous regions like China, Nepal, and Bhutan. ⛰️",
         image: "images/walk.JPG",
         next: 9,
         back: 7
     },
     { // 9
-        speech: "What is the top contributor to the Red Panda's endangerment status?",
+        speech: "What is the top contributor to the red panda's endangerment status?",
         image: "images/newSit.JPG",
         correct: 11,
         wrong: 10
     },
     { // 10
-        speech: "Not quite... Though that is somewhat a factor, it's not the top contributor to the Red Panda's endangerment status. &#128533;",
+        speech: "Not quite... Though that is somewhat a factor, it's not the top contributor to the red panda's endangerment status. &#128533;",
         image: "images/wrong.jpeg",
         next: 12,
         back: 9
     },
     { // 11
-        speech: "Correct! Aside from habitat loss and poaching, climate change is one of the top 3 biggest contributors to the Red Panda’s endangerment status.",
+        speech: "Correct! Aside from habitat loss and poaching, climate change is one of the top 3 biggest contributors to the red panda’s endangerment status.",
         image: "images/correct.jpeg",
         next: 12,
         back: 9
